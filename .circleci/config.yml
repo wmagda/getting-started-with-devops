@@ -1,5 +1,5 @@
 # @Date:   2018-10-18T11:33:23-06:00
-# @Last modified time: 2018-10-18T11:44:26-06:00
+# @Last modified time: 2018-10-18T11:46:08-06:00
 version: 2
 jobs:
   build:
@@ -12,11 +12,11 @@ jobs:
         - v1-npm-deps-{{ checksum "package.json" }}
         - v1-npm-deps
     - run:
-      name: Install dependencies
-      command: |
-        npm install
-        npm run dev
-        npm test
+        name: Install dependencies
+        command: |
+          npm install
+          npm run dev
+          npm test
 
     - save_cache:
         key: v1-npm-deps-{{ checksum "package.json" }}
